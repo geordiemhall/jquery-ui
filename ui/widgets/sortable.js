@@ -660,7 +660,7 @@ return $.widget( "ui.sortable", $.ui.mouse, {
 		horizontalDirection = this._getDragHorizontalDirection();
 
 		return this.floating ?
-			( ( horizontalDirection === "right" || verticalDirection === "down" ) ? 2 : 1 )
+			( ( horizontalDirection === "right" || (this.options.axis !== "x" && verticalDirection === "down" ) ? 2 : 1 )
 			: ( verticalDirection && ( verticalDirection === "down" ? 2 : 1 ) );
 
 	},
